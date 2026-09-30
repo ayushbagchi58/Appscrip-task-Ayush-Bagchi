@@ -1,0 +1,206 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  flex: 1;
+  padding: 24px 24px 24px 12px;
+  min-width: 0;
+}
+
+
+.card {
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  border-radius: 2px;
+  min-width: 0;
+}
+
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.productImage {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .productImage {
+  transform: scale(1.04);
+}
+
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #111;
+  font-family: var(--font-montserrat), Arial, sans-serif;
+  z-index: 1;
+}
+
+
+.outOfStock {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.outOfStockText {
+  background: rgba(0, 0, 0, 0.82);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: var(--font-montserrat), Arial, sans-serif;
+  padding: 8px 16px;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+
+.cardInfo {
+  padding: 10px 10px 14px;
+}
+
+.productName {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #111;
+  margin: 0 0 6px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--font-montserrat), Arial, sans-serif;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.priceText {
+  font-size: 11px;
+  color: #555;
+  font-family: var(--font-montserrat), Arial, sans-serif;
+  line-height: 1.5;
+  min-width: 0;
+}
+
+.priceText a {
+  color: #111;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.priceText a:hover {
+  color: #000;
+}
+
+
+.wishlistBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: #aaa;
+  transition: color 0.2s;
+}
+
+.wishlistBtn:hover { color: #e53935; }
+.wishlistActive    { color: #e53935; }
+
+
+@media (min-width: 1280px) {
+  .grid {
+    gap: 16px;
+    padding: 32px 32px 32px 12px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 20px 20px 20px 12px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .productName {
+    font-size: 11px;
+    letter-spacing: 0.4px;
+  }
+
+  .priceText {
+    font-size: 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .cardInfo {
+    padding: 8px 8px 10px;
+  }
+
+  .productName {
+    font-size: 10px;
+  }
+
+  .priceText {
+    font-size: 9px;
+  }
+
+  .badge {
+    font-size: 8px;
+    top: 6px;
+    left: 6px;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 8px;
+    padding: 8px;
+  }
+}
