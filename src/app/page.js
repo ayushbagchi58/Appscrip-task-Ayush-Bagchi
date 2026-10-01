@@ -7,7 +7,7 @@ import ShopFilters from "./Component/ShopFilters/ShopFilters";
 import ShopProducts from "./Component/ShopProducts/ShopProducts";
 
 export default function Home() {
-  const [filterOpen, setFilterOpen] = useState(false);
+  const [filterOpen, setFilterOpen] = useState(true);
   const [totalProducts, setTotalProducts] = useState(0);
   const [sortBy, setSortBy] = useState("recommended");
   const [selectedCategories, setSelectedCategories] = useState(["all"]);
